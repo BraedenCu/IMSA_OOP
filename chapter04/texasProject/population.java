@@ -1,4 +1,4 @@
-import java.util.Scanner;
+iimport java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
@@ -19,8 +19,9 @@ public class population
     private int[] numCon; //number of conties based on starting digit
     private double[] percent; //percent of counties based on starting digit
     private double[] digitPop;
+    private Random rand;
     
-    public population() {
+    public population(String s)throws FileNotFoundException {
         
     }
 }
