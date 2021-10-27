@@ -1,4 +1,4 @@
-iimport java.util.Scanner;
+import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
@@ -22,6 +22,21 @@ public class population
     private Random rand;
     
     public population(String s)throws FileNotFoundException {
+        File text = new File(s);
+        scan = new Scanner(text);
+        String line = "";
+        String[] sa = new String[2];
+        int lineNum = 0;
+        while (scan.hasNextLine()) {
+            line = scan.nextLine();
+            //System.out.println(line);
+            //for (int j = 0; j<s.length; j++) {
+            sa = line.split(" ");
+            System.out.println(sa[0]);
+            counties[lineNum] = sa[0];
+            population[lineNum] = Integer.parseInt(sa[1]);
+            lineNum+=1;
+        }
         
     }
 }
