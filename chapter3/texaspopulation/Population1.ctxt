@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Population1
+comment0.text=\nThis\ program\ processes\ the\ population\ of\ the\ counties\ in\ the\ state\ of\ Texas.\n\ \n\ @author\ (Braeden\ Cullen)\ \n\ @version\ (10/28/2021)\n
+comment1.params=
+comment1.target=Population1()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Population\n
+comment2.params=
+comment2.target=void\ population()
+comment3.params=
+comment3.target=int\ findTotal()
+comment4.params=
+comment4.target=void\ randomPopulation()
+numComments=5
