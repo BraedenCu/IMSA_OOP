@@ -42,11 +42,12 @@ public class Population1
       //findTotal();
       rand = new Random();
       sc = new Scanner(System.in);
-      while(b) {
-          System.out.println("Would you like to play ... ");
-          s = sc.nextLine();
-          if (s.equals("yes")) { 
-              System.out.println("pick a number 1 = population, 2 = find total, 3 = random county, 4 = stop ");
+      
+      System.out.println("Would you like to play ... yes/no ");
+      s = sc.nextLine();
+      if (s.equals("yes")) { 
+          while(b) {
+              System.out.println("pick a number 1 = population, 2 = find total, 3 = random county, 4 = numcon, 5 = stop  ");
               s = sc.nextLine();
               k = Integer.parseInt(s);
               if (k>=1 && k <=5) {
@@ -54,16 +55,17 @@ public class Population1
                   if (k==1) { population();}
                   if (k==2) { System.out.println(findTotal());}
                   if (k==3) { randomPopulation();}
-                  if (k==4) { b = false; }
-                  if (k==5) { }
+                  if (k==4) { numcon();} //enter one digit 1-9 to display counties witha population that starts with that digit 
+                  if (k==5) { b = false;}
               }
           }
-          else {
-              System.out.println("Huh. Say yes. rn.");
-              //exiting out of loop
-              b = false;
-          }
       }
+      else {
+          System.out.println("Huh. Say yes. rn.");
+          //exiting out of loop
+          b = false;
+      }
+      
 
     }
     //this method reads the file and populates the arrays
@@ -99,6 +101,28 @@ public class Population1
     public void randomPopulation() {
         k = rand.nextInt(254);
         System.out.println("  " + counties[k] + population[k]);
+    }
+    
+    public void numcon() {
+        //numCon //num countes for each leading digit 
+        String y;
+        for (int x : population) {
+            y = "" + x;
+            String digit = y.substring(0,1);
+            int d = Integer.parseInt(digit);
+            numCon[d-1] = numCon[d-1] + 1; 
+        }
+        System.out.println(numCon[0] + " " + numCon[1]);
+    }
+    
+    public void digitCounty() {
+        String y;
+        for (int x : population) {
+            y = "" + x;
+            String digit = y.substring(0, 1);
+            int d = Integer.parseInt(digit);
+            numCon[d-1] = numCon[d-1] + 1;
+        }
     }
 
     
