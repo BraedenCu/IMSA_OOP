@@ -130,9 +130,6 @@ public class Population1
             total2+=population[i];
         }
         return total2;
-        //for (int i : population) {
-        //    total2+=i;
-        //}
     }
     
     public void randomPopulation() {
@@ -172,20 +169,21 @@ public class Population1
         //format: digit - number of counties - percent unrounded - percent rounded to tenths - percent * 10000
         String y;
         System.out.println("*********************************************************************");
+        System.out.println("digit" +  "   " + "number" + "   " + "percentage");
         numcon();
-        for (int i = 1; i<9; i++) {
-            float tot = 0;
+        findTotal(); //total2 = total populatoin
+        for (int i = 0; i<9; i++) {
+            float total = 0;
             for (int x = 0; x<population.length; x++) {
                 y = "" + population[x];
                 String digit = y.substring(0, 1);
                 int d = Integer.parseInt(digit);
-                if (d==i) {
-                    tot+=1;
+                if (d==(i+1)) {
+                    total+=population[x];
                 }
-                
             }
-            percentDigit[i] = tot/254;
-            System.out.println("" + numCon[i] + "   " + percentDigit[i] + "     " + percentDigit[i]*100 + "      " + percentDigit[i]*10000);
+            percentDigit[i] = total/total2; //need to fix
+            System.out.println("" + (i+1) +  "   " + numCon[i] + "   " + Math.round(percentDigit[i] * 1000.0) / 10.0 + "     " + percentDigit[i]*100 + "      " + percentDigit[i]*10000);
         }
         System.out.println("*********************************************************************");
     }
