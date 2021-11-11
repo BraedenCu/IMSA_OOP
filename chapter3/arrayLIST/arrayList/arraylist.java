@@ -13,6 +13,8 @@ public class arraylist
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         ArrayList<String> list = new ArrayList<String>();
+        ArrayList<boolean> ok = new ArrayList<boolean>();
+        
         String s = "";
         for (int i = 0; i<5; i++) {
             System.out.println("Enter string --> ");

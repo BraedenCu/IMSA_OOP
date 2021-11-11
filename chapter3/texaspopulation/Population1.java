@@ -183,7 +183,7 @@ public class Population1
                 }
             }
             percentDigit[i] = total/total2; //need to fix
-            System.out.println("" + (i+1) +  "   " + numCon[i] + "   " + Math.round(percentDigit[i] * 1000.0) / 10.0 + "     " + percentDigit[i]*100 + "      " + percentDigit[i]*10000);
+            System.out.println("" + (i+1) +  "       " + numCon[i] + "        " + Math.round(percentDigit[i] * 10000.0) / 100.0 + "         " + percentDigit[i]*100);
         }
         System.out.println("*********************************************************************");
     }
