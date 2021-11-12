@@ -3,6 +3,14 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.*;
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
+import java.util.*;
+
 /**
  *This program processes the population of the counties in the state of Texas.
  * 
@@ -26,7 +34,7 @@ public class Population1
     private boolean b = true;
     private String s = "";
     private int k = 0;
-  
+    private Canvas canvas;
     
 
     /**
@@ -42,9 +50,12 @@ public class Population1
       percen = new double[9];
       digitPop = new double[9];
       percentDigit = new double[9];
+        
+      int x = 1000;
+      int y = 600;
+      int centerX = x/2;
+      int centerY = y/2;
       
-      //population(); 
-      //findTotal();
       rand = new Random();
       sc = new Scanner(System.in);
       
@@ -57,7 +68,7 @@ public class Population1
               System.out.println("pick a number 1 = population, 2 = find total, 3 = random county, 4 = counties with selected leading digit, 5 = display percentages of each leading digit, 6 = stop  ");
               s = sc.nextLine();
               k = Integer.parseInt(s);
-              if (k>=1 && k <=6) {
+              if (k>=1 && k <=7) {
                   if (k==1) { population();}
                   else if (k==2) { System.out.println(findTotal());}
                   else if (k==3) { randomPopulation();}
@@ -69,7 +80,8 @@ public class Population1
                       digitCounty(k);
                   }
                   else if (k==5) { percentDigitCounty(); }
-                  else if (k==6) { b = false; break;}
+                  else if (k==6) { drawBarGraph();}
+                  else if (k==7) { b = false; break;}
                   else {
                       System.out.println("Please enter a valid number 1-5");
                   }
@@ -190,6 +202,21 @@ public class Population1
     
     public void drawBarGraph() { //bar graph due tuesday
         System.out.println("draw a bar graph");
+        percentDigitCounty();
+        canvas = new Canvas("graph", 1000, 1000);
+        canvas.fillRectangle(49*2, 49*2, 302*2, 302*2);
+        canvas.eraseRectangle(50*2, 50*2, 300*2, 300*2);
+        for (int i=0; i<9; i++) {
+            canvas.fillRectangle(106+62*i, 700-numCon[i]*6, 40, numCon[i]*6);
+        }
+        for (int i=1; i<10; i++) {
+            canvas.drawString(String.valueOf(i), 60+62*i, 720);
+        }
+        for (int i=0; i<11; i++) {
+            canvas.drawString(String.valueOf(i*10), 32, 700-60*i);
+        }
+        
+        canvas.drawString("Number of Counties by Total Population Starting Digit", 400, 50);
     }
 
     
