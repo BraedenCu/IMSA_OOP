@@ -65,7 +65,9 @@ public class Population1
           //populate arrays
           populate();
           while(b) {
-              System.out.println("pick a number 1 = population, 2 = find total, 3 = random county, 4 = counties with selected leading digit, 5 = display percentages of each leading digit, 6 = graph of the number of counties for each leading digit, 7 = stop  ");
+              System.out.println("pick a number 1 = population, 2 = find total, 3 = random county,");
+              System.out.println("4 = counties with selected leading digit, 5 = display percentages of each leading digit,");
+              System.out.println("6 = graph of the number of counties for each leading digit, 7 = stop  ");
               s = sc.nextLine();
               k = Integer.parseInt(s);
               if (k>=1 && k <=7) {
@@ -106,6 +108,7 @@ public class Population1
         String line = "";
         String[] s = new String[2];
         int i = 0;
+        //int total = 0;
         while (scan.hasNextLine())
         {
             line = scan.nextLine();
@@ -125,6 +128,7 @@ public class Population1
         String line = "";
         String[] s = new String[2];
         int i = 0;
+        total = 0;
         while (scan.hasNextLine())
         {
             line = scan.nextLine();
@@ -138,6 +142,7 @@ public class Population1
     }
     
     public int findTotal() {
+        total2 = 0;
         for (int i = 0; i < population.length; i++) {
             total2+=population[i];
         }
@@ -227,6 +232,18 @@ public class Population1
         
         canvas.drawString("Number of Counties by Total Population Starting Digit", 200, 80);
         canvas.drawString("Leading Population Digit", 300, 740);
+        canvas.drawString("#", 30, 330);
+        
+        canvas.drawString("o", 30, 370);
+        canvas.drawString("f", 30, 390);
+        
+        canvas.drawString("c", 30, 430);
+        canvas.drawString("o", 30, 450);
+        canvas.drawString("u", 30, 470);
+        canvas.drawString("n", 30, 490);
+        canvas.drawString("i", 30, 510);
+        canvas.drawString("e", 30, 530);
+        canvas.drawString("s", 30, 550);
     }
 
     
