@@ -65,7 +65,7 @@ public class Population1
           //populate arrays
           populate();
           while(b) {
-              System.out.println("pick a number 1 = population, 2 = find total, 3 = random county, 4 = counties with selected leading digit, 5 = display percentages of each leading digit, 6 = stop  ");
+              System.out.println("pick a number 1 = population, 2 = find total, 3 = random county, 4 = counties with selected leading digit, 5 = display percentages of each leading digit, 6 = graph of the number of counties for each leading digit, 7 = stop  ");
               s = sc.nextLine();
               k = Integer.parseInt(s);
               if (k>=1 && k <=7) {
@@ -206,17 +206,27 @@ public class Population1
         canvas = new Canvas("graph", 1000, 1000);
         canvas.fillRectangle(49*2, 49*2, 302*2, 302*2);
         canvas.eraseRectangle(50*2, 50*2, 300*2, 300*2);
-        for (int i=0; i<9; i++) {
+        for (int i =0; i<9; i++) {
+            Random rand = new Random();
+            float r = rand.nextFloat();
+            float g = rand.nextFloat();
+            float b = rand.nextFloat();
+            Color randomColor = new Color(r, g, b);
+            canvas.setForegroundColor(randomColor);
             canvas.fillRectangle(106+62*i, 700-numCon[i]*6, 40, numCon[i]*6);
         }
-        for (int i=1; i<10; i++) {
+        Color black = new Color(0, 0, 0);
+        for (int i = 1; i<10; i++) {
+            canvas.setForegroundColor(black);
             canvas.drawString(String.valueOf(i), 60+62*i, 720);
         }
-        for (int i=0; i<11; i++) {
-            canvas.drawString(String.valueOf(i*10), 32, 700-60*i);
+        for (int i = 0; i<11; i++) {
+            canvas.setForegroundColor(black);
+            canvas.drawString(String.valueOf(i*10), 70, 700-60*i);
         }
         
-        canvas.drawString("Number of Counties by Total Population Starting Digit", 400, 50);
+        canvas.drawString("Number of Counties by Total Population Starting Digit", 200, 80);
+        canvas.drawString("Leading Population Digit", 300, 740);
     }
 
     
