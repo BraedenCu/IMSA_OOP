@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=population
+comment0.text=\n\ Write\ a\ description\ of\ class\ population\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=s
+comment1.target=population(java.lang.String)
+numComments=2
