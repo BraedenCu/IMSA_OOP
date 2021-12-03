@@ -6,6 +6,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 
 /**
  * Write a description of class namesProject here.
@@ -22,17 +24,15 @@ public class namesProject extends JFrame
     String s1 = "";
     String s2 = ""; 
     ArrayList<NameRecord> names = new ArrayList<NameRecord>();
-    //ArrayList<String> names = new ArrayList<String>();
-
+    ArrayList<String> rawLines = new ArrayList<String>();
+    HashMap<String, Integer> namesHash = new HashMap<String, Integer>();
     
     public namesProject() throws FileNotFoundException
     {
         String fullString = readFile("names.txt");
         String[] arr = fullString.split(" ");
-        //int x = 0;
-        for (String i : arr) {
-            names.add(i);
-        }
+        int x = 0;
+
         for (int i = 0; i<arr.length; i++){
             
             try {
@@ -45,6 +45,12 @@ public class namesProject extends JFrame
                 x+=1;
             }
         }
+        
+        //fill hashmap
+        for (String line : rawLines) {
+            String[] words = line.split(" ");
+            namesHash
+        }
     }
     public String readFile(String fileName) throws FileNotFoundException {
         //returns string containing entire text from a file
@@ -56,9 +62,14 @@ public class namesProject extends JFrame
         while (scan.hasNextLine()) {
             line = scan.nextLine();
             fullString+=line;
+            rawLines.add(line);
         }
         return fullString;
     }
+    
+    
+    
+    
     
     
     
