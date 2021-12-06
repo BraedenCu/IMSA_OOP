@@ -11,7 +11,7 @@ public class stringExpansion
     String output;
     
     public stringExpansion() throws Exception {
-        input = "a23b";
+        input = "a234b56";
         output = "";
         for (int i = 0; i < input.length(); i++) {
             int val = checkInt(input.substring(i, i+1));
@@ -19,16 +19,18 @@ public class stringExpansion
                 boolean currValInt = true; 
                 String curr = "";
                 while(currValInt) {
-                    i+=1;
-                    int newVal = checkInt(input.substring(i, i+1));
-                    if (newVal != 0) {
-                        val = newVal;
+                    if (i < input.length()-1) {
+                        i+=1;
+                        int newVal = checkInt(input.substring(i, i+1));
+                        if (newVal != 0) {
+                            val = newVal;
+                        }
+                        else {
+                            currValInt = false;
+                            curr = input.substring(i, i+1);
+                        }
                     }
-                    else {
-                        currValInt = false;
-                        curr = input.substring(i, i+1);
-                    }
-
+                    currValInt = false;
                 }
                 for(int z = 0; z < val+1; z++) {
                     output+=(""+curr);       
@@ -49,7 +51,7 @@ public class stringExpansion
             return val;
         }
         catch (Exception e) {
-            System.out.println("not int");
+            //System.out.println("not int");
             return 0;
         }
     }

@@ -1,3 +1,32 @@
 #BlueJ package file
-#Mon Dec 06 09:47:58 CST 2021
+editor.fx.0.height=1053
+editor.fx.0.width=924
+editor.fx.0.x=72
+editor.fx.0.y=27
+objectbench.height=182
+objectbench.width=523
+package.divider.horizontal=0.5862831858407079
+package.divider.vertical=0.8012618296529969
+package.editor.height=755
+package.editor.width=794
+package.editor.x=996
+package.editor.y=27
+package.frame.height=1053
+package.frame.width=924
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
 project.charset=UTF-8
+readme.height=60
+readme.name=@README
+readme.width=49
+readme.x=10
+readme.y=10
+target1.height=220
+target1.name=stringExpansion
+target1.showInterface=false
+target1.type=ClassTarget
+target1.width=410
+target1.x=70
+target1.y=10
