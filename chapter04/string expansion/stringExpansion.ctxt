@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=stringExpansion
+comment0.text=\n\ Write\ a\ description\ of\ class\ stringExpansion\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=stringExpansion()
+comment2.params=x
+comment2.target=int\ checkInt(java.lang.String)
+numComments=3
